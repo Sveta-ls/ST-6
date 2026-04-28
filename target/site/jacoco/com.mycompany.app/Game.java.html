@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Game.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">my-app</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.app</a> &gt; <span class="el_source">Game.java</span></div><h1>Game.java</h1><pre class="source lang-java linenums">package com.mycompany.app;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Game {
+    public State state;
+    public Player player1, player2, cplayer;
+    public int nmove, q;
+    public char symbol;
+    public char[] board;
+    public static final int INF = 100;
+
+<span class="fc" id="L13">    public Game() {</span>
+<span class="fc" id="L14">        player1 = new Player(); player2 = new Player();</span>
+<span class="fc" id="L15">        player1.symbol = 'X'; player2.symbol = 'O';</span>
+<span class="fc" id="L16">        state = State.PLAYING;</span>
+<span class="fc" id="L17">        board = new char[9];</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        for(int i=0; i&lt;9; i++) board[i] = ' ';</span>
+<span class="fc" id="L19">    }</span>
+
+    public State checkState(char[] board) {
+<span class="fc bfc" id="L22" title="All 48 branches covered.">        if ((board[0] == symbol &amp;&amp; board[1] == symbol &amp;&amp; board[2] == symbol) ||</span>
+            (board[3] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[5] == symbol) ||
+            (board[6] == symbol &amp;&amp; board[7] == symbol &amp;&amp; board[8] == symbol) ||
+            (board[0] == symbol &amp;&amp; board[3] == symbol &amp;&amp; board[6] == symbol) ||
+            (board[1] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[7] == symbol) ||
+            (board[2] == symbol &amp;&amp; board[5] == symbol &amp;&amp; board[8] == symbol) ||
+            (board[0] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[8] == symbol) ||
+            (board[2] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[6] == symbol)) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            return (symbol == 'X') ? State.XWIN : State.OWIN;</span>
+        }
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        for (int i = 0; i &lt; 9; i++) if (board[i] == ' ') return State.PLAYING;</span>
+<span class="fc" id="L33">        return State.DRAW;</span>
+    }
+
+    void generateMoves(char[] board, ArrayList&lt;Integer&gt; move_list) {
+<span class="fc bfc" id="L37" title="All 4 branches covered.">        for (int i = 0; i &lt; 9; i++) if (board[i] == ' ') move_list.add(i);</span>
+<span class="fc" id="L38">    }</span>
+
+    int evaluatePosition(char[] board, Player player) {
+<span class="fc" id="L41">        State s = checkState(board);</span>
+<span class="fc bfc" id="L42" title="All 6 branches covered.">        if (s == State.XWIN || s == State.OWIN || s == State.DRAW) {</span>
+<span class="pc bpc" id="L43" title="1 of 8 branches missed.">            if ((s == State.XWIN &amp;&amp; player.symbol == 'X') || (s == State.OWIN &amp;&amp; player.symbol == 'O')) return +INF;</span>
+<span class="pc bpc" id="L44" title="4 of 8 branches missed.">            if ((s == State.XWIN &amp;&amp; player.symbol == 'O') || (s == State.OWIN &amp;&amp; player.symbol == 'X')) return -INF;</span>
+<span class="fc" id="L45">            return 0;</span>
+        }
+<span class="fc" id="L47">        return -1;</span>
+    }
+
+    public int MiniMax(char[] board, Player player) {
+<span class="fc" id="L51">        int best_val = -INF, index = 0;</span>
+<span class="fc" id="L52">        ArrayList&lt;Integer&gt; move_list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L53">        int[] best_moves = new int[9];</span>
+<span class="fc" id="L54">        generateMoves(board, move_list);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        while (!move_list.isEmpty()) {</span>
+<span class="fc" id="L56">            int move = move_list.get(0);</span>
+<span class="fc" id="L57">            board[move] = player.symbol;</span>
+<span class="fc" id="L58">            symbol = player.symbol;</span>
+<span class="fc" id="L59">            int val = MinMove(board, player);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (val &gt; best_val) { best_val = val; index = 0; best_moves[index] = move + 1; }</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">            else if (val == best_val) best_moves[++index] = move + 1;</span>
+<span class="fc" id="L62">            board[move] = ' '; move_list.remove(0);</span>
+<span class="fc" id="L63">        }</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (index &gt; 0) index = new Random().nextInt(index + 1);</span>
+<span class="fc" id="L65">        q = 0; return best_moves[index];</span>
+    }
+
+    int MinMove(char[] board, Player player) {
+<span class="fc" id="L69">        int pos_v = evaluatePosition(board, player);</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (pos_v != -1) return pos_v;</span>
+<span class="fc" id="L71">        q++; int best_val = +INF;</span>
+<span class="fc" id="L72">        ArrayList&lt;Integer&gt; move_list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L73">        generateMoves(board, move_list);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        while (!move_list.isEmpty()) {</span>
+<span class="fc" id="L75">            int move = move_list.get(0);</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">            symbol = (player.symbol == 'X') ? 'O' : 'X';</span>
+<span class="fc" id="L77">            board[move] = symbol;</span>
+<span class="fc" id="L78">            int val = MaxMove(board, player);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            if (val &lt; best_val) best_val = val;</span>
+<span class="fc" id="L80">            board[move] = ' '; move_list.remove(0);</span>
+<span class="fc" id="L81">        }</span>
+<span class="fc" id="L82">        return best_val;</span>
+    }
+
+    int MaxMove(char[] board, Player player) {
+<span class="fc" id="L86">        int pos_v = evaluatePosition(board, player);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (pos_v != -1) return pos_v;</span>
+<span class="fc" id="L88">        q++; int best_val = -INF;</span>
+<span class="fc" id="L89">        ArrayList&lt;Integer&gt; move_list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L90">        generateMoves(board, move_list);</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        while (!move_list.isEmpty()) {</span>
+<span class="fc" id="L92">            int move = move_list.get(0);</span>
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">            symbol = (player.symbol == 'X') ? 'X' : 'O';</span>
+<span class="fc" id="L94">            board[move] = symbol;</span>
+<span class="fc" id="L95">            int val = MinMove(board, player);</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">            if (val &gt; best_val) best_val = val;</span>
+<span class="fc" id="L97">            board[move] = ' '; move_list.remove(0);</span>
+<span class="fc" id="L98">        }</span>
+<span class="fc" id="L99">        return best_val;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
