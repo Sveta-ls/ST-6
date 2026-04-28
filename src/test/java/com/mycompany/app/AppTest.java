@@ -8,7 +8,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 public class AppTest {
-    private Game game;
+    private Game game; \\actions
 
     @BeforeEach
     void setUp() {
