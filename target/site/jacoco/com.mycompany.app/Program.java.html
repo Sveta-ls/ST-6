@@ -312,21 +312,18 @@ class TicTacToePanel extends JPanel implements ActionListener {
 <span class="fc" id="L312">      game.state=game.checkState(game.board);</span>
 
 
-<span class="pc bpc" id="L315" title="1 of 2 branches missed.">      if(game.state==State.XWIN) {</span>
-<span class="nc" id="L316">        JOptionPane.showMessageDialog(null,&quot;Выиграли крестики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-
-      }
-<span class="pc bpc" id="L319" title="1 of 2 branches missed.">      else if(game.state==State.OWIN) {</span>
-<span class="nc" id="L320">        JOptionPane.showMessageDialog(null,&quot;Выиграли нолики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-      }
-<span class="pc bpc" id="L322" title="1 of 2 branches missed.">      else if(game.state==State.DRAW) {</span>
-<span class="nc" id="L323">        JOptionPane.showMessageDialog(null,&quot;Ничья&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-      } 
-
+<span class="pc bpc" id="L315" title="1 of 2 branches missed.">if(game.state == State.XWIN) {</span>
+<span class="nc" id="L316">    System.out.println(&quot;Результат: Выиграли крестики&quot;);</span>
+}
+<span class="pc bpc" id="L318" title="1 of 2 branches missed.">else if(game.state == State.OWIN) {</span>
+<span class="nc" id="L319">    System.out.println(&quot;Результат: Выиграли нолики&quot;);</span>
+}
+<span class="pc bpc" id="L321" title="1 of 2 branches missed.">else if(game.state == State.DRAW) {</span>
+<span class="nc" id="L322">    System.out.println(&quot;Результат: Ничья&quot;);</span>
+}
 
 
-
-<span class="fc" id="L329">   }</span>
+<span class="fc" id="L326">   }</span>
 }
 
 

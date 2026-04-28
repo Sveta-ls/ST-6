@@ -312,18 +312,15 @@ class TicTacToePanel extends JPanel implements ActionListener {
       game.state=game.checkState(game.board);
 
 
-      if(game.state==State.XWIN) {
-        JOptionPane.showMessageDialog(null,"Выиграли крестики","Результат", JOptionPane.WARNING_MESSAGE);
-
-      }
-      else if(game.state==State.OWIN) {
-        JOptionPane.showMessageDialog(null,"Выиграли нолики","Результат", JOptionPane.WARNING_MESSAGE);
-      }
-      else if(game.state==State.DRAW) {
-        JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
-      } 
-
-
+if(game.state == State.XWIN) {
+    System.out.println("Результат: Выиграли крестики");
+}
+else if(game.state == State.OWIN) {
+    System.out.println("Результат: Выиграли нолики");
+}
+else if(game.state == State.DRAW) {
+    System.out.println("Результат: Ничья");
+}
 
 
    }

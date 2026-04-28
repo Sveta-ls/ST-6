@@ -5,4 +5,4 @@ my-app,com.mycompany.app,Program,32,0,0,0,7,0,2,0,2,0
 my-app,com.mycompany.app,TicTacToeCell,9,43,0,0,3,13,3,3,3,3
 my-app,com.mycompany.app,Utility,12,47,1,5,2,14,2,5,1,3
 my-app,com.mycompany.app,State,0,27,0,0,0,1,0,1,0,1
-my-app,com.mycompany.app,TicTacToePanel,17,237,4,10,3,40,4,6,0,3
+my-app,com.mycompany.app,TicTacToePanel,11,237,4,10,3,40,4,6,0,3
