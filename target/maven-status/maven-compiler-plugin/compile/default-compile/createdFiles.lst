@@ -1,6 +1,5 @@
 com\mycompany\app\Program.class
 com\mycompany\app\Player.class
-com\mycompany\app\Point.class
 com\mycompany\app\State.class
 com\mycompany\app\TicTacToePanel.class
 com\mycompany\app\Utility.class
