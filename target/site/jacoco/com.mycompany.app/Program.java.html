@@ -285,54 +285,48 @@ class TicTacToePanel extends JPanel implements ActionListener {
    public void actionPerformed(ActionEvent ae) {
 <span class="fc" id="L286">      game.player1.move = -1;</span>
 <span class="fc" id="L287">      game.player2.move = -1;</span>
-      //System.out.println(game.cplayer.symbol);
-      //System.out.println(((TicTacToeCell)(ae.getSource())).getNum());
 
-
-<span class="fc" id="L292">      int i=0;</span>
-<span class="fc bfc" id="L293" title="All 2 branches covered.">      for(TicTacToeCell jb: cells) {</span>
-<span class="fc bfc" id="L294" title="All 2 branches covered.">         if(ae.getSource()==jb) {</span>
-<span class="fc" id="L295">            jb.setMarker(Character.toString(game.cplayer.symbol));</span>
+<span class="fc" id="L289">      int i=0;</span>
+<span class="fc bfc" id="L290" title="All 2 branches covered.">      for(TicTacToeCell jb: cells) {</span>
+<span class="fc bfc" id="L291" title="All 2 branches covered.">         if(ae.getSource()==jb) {</span>
+<span class="fc" id="L292">            jb.setMarker(Character.toString(game.cplayer.symbol));</span>
          }
-<span class="fc" id="L297">         game.board[i++]=jb.getMarker();</span>
+<span class="fc" id="L294">         game.board[i++]=jb.getMarker();</span>
       }
-<span class="fc bfc" id="L299" title="All 2 branches covered.">      if(game.cplayer==game.player1) {</span>
+<span class="fc bfc" id="L296" title="All 2 branches covered.">      if(game.cplayer==game.player1) {</span>
 
-<span class="fc" id="L301">         game.player2.move = game.MiniMax(game.board, game.player2);</span>
-<span class="fc" id="L302">         game.nmove = game.player2.move;</span>
-<span class="fc" id="L303">         game.symbol = game.player2.symbol;</span>
-<span class="fc" id="L304">         game.cplayer = game.player2;</span>
-<span class="pc bpc" id="L305" title="1 of 2 branches missed.">         if(game.player2.move&gt;0)</span>
-<span class="fc" id="L306">            cells[game.player2.move-1].doClick();</span>
+<span class="fc" id="L298">         game.player2.move = game.MiniMax(game.board, game.player2);</span>
+<span class="fc" id="L299">         game.nmove = game.player2.move;</span>
+<span class="fc" id="L300">         game.symbol = game.player2.symbol;</span>
+<span class="fc" id="L301">         game.cplayer = game.player2;</span>
+<span class="pc bpc" id="L302" title="1 of 2 branches missed.">         if(game.player2.move&gt;0)</span>
+<span class="fc" id="L303">            cells[game.player2.move-1].doClick();</span>
        }
        else
        {
-<span class="fc" id="L310">         game.nmove = game.player1.move;</span>
-<span class="fc" id="L311">         game.symbol = game.player1.symbol;</span>
-<span class="fc" id="L312">         game.cplayer = game.player1;</span>
+<span class="fc" id="L307">         game.nmove = game.player1.move;</span>
+<span class="fc" id="L308">         game.symbol = game.player1.symbol;</span>
+<span class="fc" id="L309">         game.cplayer = game.player1;</span>
        }
 
-<span class="fc" id="L315">      game.state=game.checkState(game.board);</span>
+<span class="fc" id="L312">      game.state=game.checkState(game.board);</span>
 
 
-<span class="pc bpc" id="L318" title="1 of 2 branches missed.">      if(game.state==State.XWIN) {</span>
-<span class="nc" id="L319">        JOptionPane.showMessageDialog(null,&quot;Выиграли крестики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-<span class="nc" id="L320">        System.exit(0);</span>
+<span class="pc bpc" id="L315" title="1 of 2 branches missed.">      if(game.state==State.XWIN) {</span>
+<span class="nc" id="L316">        JOptionPane.showMessageDialog(null,&quot;Выиграли крестики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
 
       }
-<span class="pc bpc" id="L323" title="1 of 2 branches missed.">      else if(game.state==State.OWIN) {</span>
-<span class="nc" id="L324">        JOptionPane.showMessageDialog(null,&quot;Выиграли нолики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-<span class="nc" id="L325">        System.exit(0);</span>
+<span class="pc bpc" id="L319" title="1 of 2 branches missed.">      else if(game.state==State.OWIN) {</span>
+<span class="nc" id="L320">        JOptionPane.showMessageDialog(null,&quot;Выиграли нолики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
       }
-<span class="pc bpc" id="L327" title="1 of 2 branches missed.">      else if(game.state==State.DRAW) {</span>
-<span class="nc" id="L328">        JOptionPane.showMessageDialog(null,&quot;Ничья&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
-<span class="nc" id="L329">        System.exit(0);</span>
+<span class="pc bpc" id="L322" title="1 of 2 branches missed.">      else if(game.state==State.DRAW) {</span>
+<span class="nc" id="L323">        JOptionPane.showMessageDialog(null,&quot;Ничья&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
       } 
 
 
 
 
-<span class="fc" id="L335">   }</span>
+<span class="fc" id="L329">   }</span>
 }
 
 
