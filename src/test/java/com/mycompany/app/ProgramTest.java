@@ -1,5 +1,6 @@
 package com.mycompany.app;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.awt.Component;
