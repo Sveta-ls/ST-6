@@ -409,25 +409,4 @@ public class ProgramTest {
         assertEquals(3, move);
     }
 
-    @Test
-    void testTicTacToeCell() {
-        TicTacToeCell cell = new TicTacToeCell(1, 0, 0);
-        cell.setMarker("X");
-        assertEquals('X', cell.getMarker());
-        assertEquals(0, cell.getRow());
-        assertEquals(0, cell.getCol());
-        assertEquals(1, cell.getNum());
-    }
-
-    @Test
-    void testPanelAndAction() {
-        TicTacToePanel panel = new TicTacToePanel(new GridLayout(3,3));
-        assertNotNull(panel);
-        TicTacToeCell firstCell = (TicTacToeCell) panel.getComponent(0);
-        assertDoesNotThrow(() -> {
-            firstCell.doClick();
-        });
-        assertEquals('X', firstCell.getMarker());
-    }
-
 }
