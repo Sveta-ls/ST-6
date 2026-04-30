@@ -1,6 +1,5 @@
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
-
 package com.mycompany.app;
 
 import java.awt.*;
@@ -285,6 +284,9 @@ class TicTacToePanel extends JPanel implements ActionListener {
    public void actionPerformed(ActionEvent ae) {
       game.player1.move = -1;
       game.player2.move = -1;
+      //System.out.println(game.cplayer.symbol);
+      //System.out.println(((TicTacToeCell)(ae.getSource())).getNum());
+
 
       int i=0;
       for(TicTacToeCell jb: cells) {
@@ -312,18 +314,22 @@ class TicTacToePanel extends JPanel implements ActionListener {
       game.state=game.checkState(game.board);
 
 
-if(game.state == State.XWIN) {
-    System.out.println("Результат: Выиграли крестики");
-}
-else if(game.state == State.OWIN) {
-    System.out.println("Результат: Выиграли нолики");
-}
-else if(game.state == State.DRAW) {
-    System.out.println("Результат: Ничья");
-}
+      if(game.state==State.XWIN) {
+        JOptionPane.showMessageDialog(null,"Выиграли крестики","Результат", JOptionPane.WARNING_MESSAGE);
+        System.exit(0);
+
+      }
+      else if(game.state==State.OWIN) {
+        JOptionPane.showMessageDialog(null,"Выиграли нолики","Результат", JOptionPane.WARNING_MESSAGE);
+        System.exit(0);
+      }
+      else if(game.state==State.DRAW) {
+        JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
+        System.exit(0);
+      } 
+
+
 
 
    }
 }
-
-
