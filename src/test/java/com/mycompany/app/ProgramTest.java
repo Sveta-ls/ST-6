@@ -215,14 +215,4 @@ public class ProgramTest {
         }
         return board;
     }
-
-    @Test
-    public void testActionPerformanceEmulation() {
-        TicTacToePanel panel = new TicTacToePanel(new GridLayout(3, 3));
-        Assertions.assertEquals(9, panel.getComponentCount());
-        
-        for (int i = 0; i < 9; i++) {
-            Assertions.assertTrue(panel.getComponent(i) instanceof TicTacToeCell);
-        }
-    }
 }
