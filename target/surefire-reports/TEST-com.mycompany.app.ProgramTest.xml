@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.292" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.283" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
     <property name="sun.awt.enableExtraMouseButtons" value="true"/>
-    <property name="java.class.path" value="C:\ST-6\my-app\target\test-classes;C:\ST-6\my-app\target\classes;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\Света\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\Света\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="java.class.path" value="C:\ST-6\my-app\target\test-classes;C:\ST-6\my-app\target\classes;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.0\junit-jupiter-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\Света\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\Света\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -16,9 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.2.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Света\AppData\Local\Temp\surefire1988132126905294921\surefirebooter-20260430223716824_3.jar C:\Users\Света\AppData\Local\Temp\surefire1988132126905294921 2026-04-30T22-37-16_690-jvmRun1 surefire-20260430223716824_1tmp surefire_0-20260430223716824_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Света\AppData\Local\Temp\surefire8516740884871308325\surefirebooter-20260430224634934_3.jar C:\Users\Света\AppData\Local\Temp\surefire8516740884871308325 2026-04-30T22-46-34_840-jvmRun1 surefire-20260430224634934_1tmp surefire_0-20260430224634934_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\ST-6\my-app\target\test-classes;C:\ST-6\my-app\target\classes;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\Света\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\Света\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\ST-6\my-app\target\test-classes;C:\ST-6\my-app\target\classes;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.0\junit-jupiter-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\Света\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\Света\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\Света\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Света"/>
     <property name="user.language" value="ru"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\Света\AppData\Local\Temp\surefire1988132126905294921\surefirebooter-20260430223716824_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Света\AppData\Local\Temp\surefire8516740884871308325\surefirebooter-20260430224634934_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-LTS"/>
@@ -63,7 +63,7 @@
     <property name="java.class.version" value="69.0"/>
   </properties>
   <testcase name="cellStoresCoordinatesAndMarker" classname="com.mycompany.app.ProgramTest" time="0.081"/>
-  <testcase name="panelProcessesHumanAndComputerMoves" classname="com.mycompany.app.ProgramTest" time="0.159">
+  <testcase name="panelProcessesHumanAndComputerMoves" classname="com.mycompany.app.ProgramTest" time="0.158">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -75,7 +75,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="minimaxFindsImmediateWinningMoveForO" classname="com.mycompany.app.ProgramTest" time="0.003">
+  <testcase name="minimaxFindsImmediateWinningMoveForO" classname="com.mycompany.app.ProgramTest" time="0.001">
     <system-out><![CDATA[
 minimax:   3(100) 
 minimax:   6(0) 
@@ -84,7 +84,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   3(100) Steps counted: 83]]></system-out>
   </testcase>
-  <testcase name="utilityPrintMethodsExecute" classname="com.mycompany.app.ProgramTest" time="0.003">
+  <testcase name="utilityPrintMethodsExecute" classname="com.mycompany.app.ProgramTest" time="0.002">
     <system-out><![CDATA[
 X-O-X-O-X-O-X-O-X-
 
@@ -93,9 +93,9 @@ X-O-X-O-X-O-X-O-X-
 1-3-
 ]]></system-out>
   </testcase>
-  <testcase name="returnsOnlEmptyPos" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="returnsOnlEmptyPos" classname="com.mycompany.app.ProgramTest" time="0.0"/>
   <testcase name="minAndMaxMoveReturnScore" classname="com.mycompany.app.ProgramTest" time="0.0"/>
-  <testcase name="checkStateDetectsWinsDrawAndPlaying" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="checkStateDetectsWinsDrawAndPlaying" classname="com.mycompany.app.ProgramTest" time="0.005"/>
   <testcase name="gameInitializesWithEmptyBoardAndPlayers" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="evaluatePositionReturnsExpectedScores" classname="com.mycompany.app.ProgramTest" time="0.001"/>
 </testsuite>
