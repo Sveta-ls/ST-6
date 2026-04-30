@@ -12,6 +12,7 @@ public class ProgramTest {
     
     @BeforeEach
     void setUp() {
+
         System.setProperty("java.awt.headless", "true");
         game = new Game();
         game.player1.symbol = 'X';
