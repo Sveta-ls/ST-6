@@ -46,7 +46,6 @@ class Game {
     // возвращаем состояние игры
     public State checkState(char[] board)
     {
-      //char symbol=game.symbol;//cplayer.symbol;
       State state=State.PLAYING;
       if ((board[0] == symbol && board[1] == symbol && board[2] == symbol) ||
           (board[3] == symbol && board[4] == symbol && board[5] == symbol) ||
