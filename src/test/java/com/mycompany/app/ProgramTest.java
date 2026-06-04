@@ -54,12 +54,12 @@ class ProgramTest {
 
     @Test
     void moveGeneratorReturnsAvailableCellsOnly() {
-        Game game = new Game();
+        Game game1 = new Game();
 
         char[] currentBoard = {'X', ' ', 'O', ' ', 'X', ' ', ' ', 'O', ' '};
         ArrayList<Integer> possibleMoves = new ArrayList<>();
 
-        game.generateMoves(currentBoard, possibleMoves);
+        game1.generateMoves(currentBoard, possibleMoves);
 
         assertEquals(5, possibleMoves.size());
 
